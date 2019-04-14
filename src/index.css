@@ -1,14 +1,82 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  position: relative;
+  min-height: 95%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  display: block;
+  background: url(img/background.jpg) center center / cover no-repeat fixed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Home Link & Reset */
+nav {
+  min-height: 32px;
+  margin-top: 15px;
+}
+
+nav a,
+nav span {
+  height: 32px;
+  background-color: #ffffff;
+  color: #404040;
+  font-size: 1;
+  margin: 5px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  border: 1px solid #404040;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav span:hover {
+  color: #fff;
+  background-color: #404040;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: 400;
+}
+
+.instruction > p {
+  font-size: 1.25em;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  margin-top: 20px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.counter strong {
+  color: #8b0000;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+  text-align: center;
 }
