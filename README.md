@@ -1,3 +1,19 @@
+## **Kill The Fly Game**
+
+The objective of Kill The Fly Game is to click the moving fly as much as you can within 30 seconds.
+
+![Kill The Fly Game Webpage](http://www.bernadetteengleman.com/img/portfolio/flythumbnail2.jpg)
+
+- It is a single-page, responsive application programmed with React
+
+**Front-End:**
+
+- React
+- CSS
+- HTML
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
