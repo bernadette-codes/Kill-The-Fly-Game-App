@@ -55,6 +55,11 @@ h1 {
   padding-right: 15px;
 }
 
+#startButton {
+  margin: 50px auto;
+  cursor: pointer;
+}
+
 .counter {
   display: flex;
   flex-direction: row;
@@ -72,6 +77,141 @@ h1 {
   color: #8b0000;
 }
 
+.flyarea {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto 10px;
+  padding-bottom: 0;
+  cursor: url(img/swatter2.png), crosshair;
+}
+
+#box {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  top: 10px;
+  bottom: 0;
+  background-color: transparent;
+  /* overflow: hidden; */
+  cursor: url(img/swatter2.png), crosshair;
+}
+
+#fly {
+  position: absolute;
+  display: block;
+  -webkit-animation: moveX 3.05s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
+  -moz-animation: moveX 3.05s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
+  -o-animation: moveX 3.05s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
+  animation: moveX 3.05s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: url(img/swatter2.png), crosshair;
+}
+
+@-webkit-keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@-moz-keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@-o-keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@-webkit-keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}
+@-moz-keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}
+@-o-keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}
+@keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}
+
+#over {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+  top: 200px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+#over p {
+  font-size: 1.3em;
+}
+
+.yesDisplay {
+  display: block;
+}
+
+.noDisplay {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
 footer {
   position: absolute;
   left: 0;

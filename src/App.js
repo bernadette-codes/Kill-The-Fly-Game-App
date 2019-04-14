@@ -1,39 +1,47 @@
-import React, { Component } from "react";
+import React from "react";
+import Mechanics from "./components/mechanics";
 import Nav from "./components/nav";
 import MainContent from "./components/mainContent";
 
-class App extends Component {
+class App extends Mechanics {
   constructor(props) {
     super(props);
     this.state = {
-      startButton: true,
       instruction: true,
-      timeLeft: 30
+      startButton: true,
+      counter: false,
+      numOfClick: 0,
+      timeLeft: 30,
+      fly: false,
+      gameOver: false
     };
   }
 
-  startGame = () => {
-    this.setState({
-      startButton: false
-    });
-  };
-
-  reset = () => {
-    window.location.reload();
-  };
-
   render() {
-    const { startButton, instruction, timeLeft } = this.state;
+    const {
+      instruction,
+      startButton,
+      counter,
+      numOfClick,
+      timeLeft,
+      fly,
+      gameOver
+    } = this.state;
 
     return (
       <div>
         <Nav reset={this.reset} />
 
         <MainContent
+          instruction={instruction}
           startButton={startButton}
           startGame={this.startGame}
-          instruction={instruction}
+          counter={counter}
+          numOfClick={numOfClick}
           timeLeft={timeLeft}
+          fly={fly}
+          clickFly={this.clickFly}
+          gameOver={gameOver}
         />
 
         <footer>
