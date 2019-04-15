@@ -5,6 +5,7 @@ import GameOver from "./gameOver";
 import start from ".././img/start.png";
 
 const MainContent = ({
+  main,
   instruction,
   startButton,
   startGame,
@@ -12,14 +13,16 @@ const MainContent = ({
   numOfClick,
   timeLeft,
   fly,
+  flyImg,
   clickFly,
   gameOver
 }) => {
+  let mainClass = main ? "yesDisplay" : "noDisplay";
   let instructionClass = instruction ? " visible" : " invisible";
   let startClass = startButton ? "yesDisplay" : "noDisplay";
 
   return (
-    <main>
+    <main className={mainClass}>
       <h1>Kill The Fly Game</h1>
       <div className={"instruction" + instructionClass}>
         <p>You have 30 seconds to click the fly as much as you can.</p>
@@ -41,7 +44,7 @@ const MainContent = ({
         />
       </div>
 
-      <FlyArea fly={fly} clickFly={clickFly} />
+      <FlyArea fly={fly} flyImg={flyImg} clickFly={clickFly} />
 
       <GameOver gameOver={gameOver} numOfClick={numOfClick} />
     </main>

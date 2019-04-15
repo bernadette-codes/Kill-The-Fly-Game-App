@@ -1,31 +1,97 @@
-import React from "react";
-import Mechanics from "./components/mechanics";
+import React, { Component } from "react";
 import Nav from "./components/nav";
 import MainContent from "./components/mainContent";
+import Fail from "./components/fail";
+import flyImg from "./img/fly.png";
+import flyImgClick from "./img/flyClick.png";
 
-class App extends Mechanics {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      main: true,
       instruction: true,
       startButton: true,
       counter: false,
       numOfClick: 0,
       timeLeft: 30,
       fly: false,
-      gameOver: false
+      flyImg: flyImg,
+      gameOver: false,
+      fail: false
     };
   }
 
+  componentDidMount() {
+    if (this.props.height <= 450) {
+      this.setState({
+        main: false,
+        fail: true
+      });
+    }
+  }
+
+  startGame = () => {
+    this.setState({
+      startButton: false,
+      counter: true,
+      fly: true
+    });
+    // Timer
+    setInterval(
+      function() {
+        this.state.timeLeft >= 1
+          ? this.setState({ timeLeft: this.state.timeLeft - 1 })
+          : this.stopGame();
+      }.bind(this),
+      1000
+    );
+  };
+
+  clickFly = () => {
+    this.setState({
+      numOfClick: this.state.numOfClick + 1,
+      flyImg: flyImgClick
+    });
+    setInterval(
+      function() {
+        this.setState({
+          flyImg: flyImg
+        });
+      }.bind(this),
+      500
+    );
+  };
+
+  stopGame = () => {
+    setTimeout(
+      function() {
+        this.setState({
+          counter: false,
+          fly: false,
+          gameOver: true
+        });
+      }.bind(this),
+      1000
+    );
+  };
+
+  reset = () => {
+    window.location.reload();
+  };
+
   render() {
     const {
+      main,
       instruction,
       startButton,
       counter,
       numOfClick,
       timeLeft,
       fly,
-      gameOver
+      flyImg,
+      gameOver,
+      fail
     } = this.state;
 
     return (
@@ -33,6 +99,7 @@ class App extends Mechanics {
         <Nav reset={this.reset} />
 
         <MainContent
+          main={main}
           instruction={instruction}
           startButton={startButton}
           startGame={this.startGame}
@@ -40,9 +107,12 @@ class App extends Mechanics {
           numOfClick={numOfClick}
           timeLeft={timeLeft}
           fly={fly}
+          flyImg={flyImg}
           clickFly={this.clickFly}
           gameOver={gameOver}
         />
+
+        <Fail fail={fail} />
 
         <footer>
           <p>
@@ -56,5 +126,10 @@ class App extends Mechanics {
     );
   }
 }
+
+App.defaultProps = {
+  width: window.innerWidth,
+  height: window.innerHeight
+};
 
 export default App;

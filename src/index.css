@@ -88,11 +88,12 @@ h1 {
 
 #box {
   position: relative;
-  margin: 0 auto;
-  width: 400px;
   top: 10px;
   bottom: 0;
+  width: 400px;
+  height: 700px;
   background-color: transparent;
+  margin: 0 auto;
   /* overflow: hidden; */
   cursor: url(img/swatter2.png), crosshair;
 }
@@ -195,6 +196,23 @@ h1 {
 
 #over p {
   font-size: 1.3em;
+}
+
+#over p strong {
+  color: #8b0000;
+}
+
+.fail {
+  background: url(img/biggerScreen.jpg) center center / 300px no-repeat fixed;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 98;
 }
 
 .yesDisplay {

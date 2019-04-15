@@ -1,7 +1,6 @@
 import React from "react";
-import flyImg from "../img/fly.png";
 
-const FlyArea = ({ fly, clickFly }) => {
+const FlyArea = ({ fly, flyImg, clickFly }) => {
   let flyClass = fly ? " visible" : " invisible";
   return (
     <div className="flyarea">
