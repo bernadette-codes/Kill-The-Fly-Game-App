@@ -39,7 +39,7 @@ class App extends Component {
     });
     // Timer
     setInterval(
-      function() {
+      function () {
         this.state.timeLeft >= 1
           ? this.setState({ timeLeft: this.state.timeLeft - 1 })
           : this.stopGame();
@@ -54,7 +54,7 @@ class App extends Component {
       flyImg: flyImgClick
     });
     setInterval(
-      function() {
+      function () {
         this.setState({
           flyImg: flyImg
         });
@@ -65,7 +65,7 @@ class App extends Component {
 
   stopGame = () => {
     setTimeout(
-      function() {
+      function () {
         this.setState({
           counter: false,
           fly: false,
@@ -115,11 +115,7 @@ class App extends Component {
         <Fail fail={fail} />
 
         <footer>
-          <p>
-            <small>
-              Copyright © 2015-{new Date().getFullYear()} Bernadette Estacio.
-              All rights reserved.
-            </small>
+          <p>© 2015-{new Date().getFullYear()} Bernadette Estacio
           </p>
         </footer>
       </div>
