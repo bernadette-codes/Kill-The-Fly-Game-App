@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "./counter";
+import Counter from "./Counter/counter";
 import FlyArea from "./flyArea";
 import GameOver from "./gameOver";
 import start from ".././img/start.png";
