@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      main: true,
       instruction: true,
       startButton: true,
       counter: false,
@@ -17,18 +16,8 @@ class App extends Component {
       timeLeft: 30,
       fly: false,
       flyImg: flyImg,
-      gameOver: false,
-      fail: false
+      gameOver: false
     };
-  }
-
-  componentDidMount() {
-    if (this.props.height <= 450) {
-      this.setState({
-        main: false,
-        fail: true
-      });
-    }
   }
 
   startGame = () => {
@@ -82,7 +71,6 @@ class App extends Component {
 
   render() {
     const {
-      main,
       instruction,
       startButton,
       counter,
@@ -90,8 +78,7 @@ class App extends Component {
       timeLeft,
       fly,
       flyImg,
-      gameOver,
-      fail
+      gameOver
     } = this.state;
 
     return (
@@ -99,7 +86,6 @@ class App extends Component {
         <Nav reset={this.reset} />
 
         <MainContent
-          main={main}
           instruction={instruction}
           startButton={startButton}
           startGame={this.startGame}
@@ -109,10 +95,9 @@ class App extends Component {
           fly={fly}
           flyImg={flyImg}
           clickFly={this.clickFly}
-          gameOver={gameOver}
-        />
+          gameOver={gameOver} />
 
-        <Fail fail={fail} />
+        <Fail />
 
         <footer>
           <p>© 2015-{new Date().getFullYear()} Bernadette Estacio

@@ -1,11 +1,10 @@
-import React from "react";
-import Counter from "./Counter/counter";
+import React, { useState, useEffect } from 'react';
+import HeaderContext from './Context/headerContext';
+import Start from './start';
 import FlyArea from "./flyArea";
-import GameOver from "./gameOver";
-import start from ".././img/start.png";
+import GameOver from "./Context/gameOver";
 
 const MainContent = ({
-  main,
   instruction,
   startButton,
   startGame,
@@ -17,36 +16,36 @@ const MainContent = ({
   clickFly,
   gameOver
 }) => {
-  let mainClass = main ? "yesDisplay" : "noDisplay";
+  const [mainState, setMainState] = useState(true); 
+  let mainClass = mainState ? "yesDisplay" : "noDisplay";
   let instructionClass = instruction ? " visible" : " invisible";
-  let startClass = startButton ? "yesDisplay" : "noDisplay";
+
+  useEffect(() => {
+    if (window.innerHeight <= 450) {
+      setMainState(false)
+    }
+  }, [mainState]);
 
   return (
     <main className={mainClass}>
-      <h1>Kill The Fly Game</h1>
-      <div className={"instruction" + instructionClass}>
-        <p>You have 30 seconds to click the fly as much as you can.</p>
-        <Counter
-          counter={counter}
-          numOfClick={numOfClick}
-          timeLeft={timeLeft}
-        />
-      </div>
+      <HeaderContext 
+        instructionClass={instructionClass} 
+        counter={counter}
+        numOfClick={numOfClick}
+        timeLeft={timeLeft}/>
 
-      <div>
-        <img
-          src={start}
-          alt="START"
-          className={startClass}
-          id="startButton"
-          width="120"
-          onClick={startGame}
-        />
-      </div>
+      <Start 
+        startButton={startButton} 
+        startGame={startGame}/>
 
-      <FlyArea fly={fly} flyImg={flyImg} clickFly={clickFly} />
+      <FlyArea 
+        fly={fly} 
+        flyImg={flyImg} 
+        clickFly={clickFly} />
 
-      <GameOver gameOver={gameOver} numOfClick={numOfClick} />
+      <GameOver 
+        gameOver={gameOver} 
+        numOfClick={numOfClick} />
     </main>
   );
 };

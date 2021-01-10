@@ -4,12 +4,11 @@ import  Timer from './timer';
 
 const Counter = ({ counter, numOfClick, timeLeft }) => {
   let counterClass = counter ? " visible" : " invisible";
-  return (
-    <div className={"counter" + counterClass}>
-      <Click numOfClick={numOfClick}/>
-      <Timer timeLeft={timeLeft}/>
-    </div>
-  );
+  
+  return <div className={"counter" + counterClass}>
+            <Click numOfClick={numOfClick}/>
+            <Timer timeLeft={timeLeft}/>
+          </div>
 };
 
 export default Counter;
