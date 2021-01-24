@@ -1,0 +1,104 @@
+.flyarea {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto 10px;
+  padding-bottom: 0;
+  cursor: url(../../../img/swatter2.png), crosshair;
+
+  .box {
+    position: relative;
+    top: 10px;
+    bottom: 0;
+    width: 400px;
+    height: 700px;
+    background-color: transparent;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    cursor: url(../../../img/swatter2.png), crosshair;
+  }
+
+  .fly {
+    position: absolute;
+    display: block;
+    -webkit-animation: moveX 3.05s linear 0s infinite alternate,
+      moveY 3.4s linear 0s infinite alternate;
+    -moz-animation: moveX 3.05s linear 0s infinite alternate,
+      moveY 3.4s linear 0s infinite alternate;
+    -o-animation: moveX 3.05s linear 0s infinite alternate,
+      moveY 3.4s linear 0s infinite alternate;
+    animation: moveX 3.05s linear 0s infinite alternate,
+      moveY 3.4s linear 0s infinite alternate;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: url(../../../img/swatter2.png), crosshair;
+  }
+}
+
+@-webkit-keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@-moz-keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@-o-keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@keyframes moveX {
+  from {
+    left: 0;
+  }
+  to {
+    left: 250px;
+  }
+}
+@-webkit-keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}
+@-moz-keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}
+@-o-keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}
+@keyframes moveY {
+  from {
+    top: 0;
+  }
+  to {
+    top: 250px;
+  }
+}

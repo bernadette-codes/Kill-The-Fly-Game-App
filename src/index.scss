@@ -1,0 +1,32 @@
+html {
+  position: relative;
+  min-height: 95%;
+}
+
+body {
+  display: block;
+  background: url(img/background.jpg) center center / cover no-repeat fixed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.yesDisplay {
+  display: block;
+}
+
+.noDisplay {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}

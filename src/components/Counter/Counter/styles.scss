@@ -1,0 +1,27 @@
+.counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  margin-top: 20px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    font-size: 1.25em;
+  }
+
+  p {
+    @media (max-width: 500px) {
+      margin-block-start: 0;
+    }
+  }
+
+  strong {
+    color: #8b0000;
+  }
+}

@@ -1,0 +1,26 @@
+nav {
+  min-height: 32px;
+  margin-top: 15px;
+
+  .btn {
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  a,
+  span {
+    background-color: #ffffff;
+    color: #404040;
+    font-size: 1.25em;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid #404040;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+      background-color: #404040;
+    }
+  }
+}
