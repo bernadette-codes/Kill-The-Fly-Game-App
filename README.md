@@ -2,7 +2,7 @@
 
 The objective of [Kill The Fly Game](https://bernadetteestacio.site/projects/kill-the-fly/) is to click the moving fly as much as you can within 30 seconds.
 
-![Kill The Fly Game Webpage](https://bernadetteestacio.site/assets/img/portfolio/kill-fly-game.png)
+![Kill The Fly Game Webpage](https://raw.githubusercontent.com/bernadette-codes/Bernadettecodes/master/public/assets/img/portfolio/kill-fly-game.png)
 
 - It is a single-page, responsive application programmed with React
 
